@@ -139,11 +139,35 @@
                 height: 100px;
             }
         }
+              .invoice-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .thank-you-message {
+            text-align: center;
+            font-style: italic;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-      <img src="logo.jpeg" alt="" style="height: 100px; width: 100px; margin-left: 300px;">
-    <p style="margin-left: 120px;">Thank you for your order! We Bright Your Ways with unique designs."</p>
+       <!-- Logo and Thank You Message -->
+   <div class="row">
+    <div class="col-12">
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="Company Logo" class="img-fluid" style="max-height: 100px;">
+        </div>
+        <p class="thank-you-message">Thank you for your order! We Bright Your Ways with unique designs.</p>
+    </div>
+</div>
+
+    
     <h1>Invoice INV-2024-001</h1>
    
     
