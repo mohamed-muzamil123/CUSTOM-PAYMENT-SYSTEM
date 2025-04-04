@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayLink - Enter Payment Code</title>
+    <title>PayLink - Enter Client Code</title>
     <style>
         * {
             margin: 0;
@@ -108,14 +108,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Enter Payment Code</h1>
-        <p class="description">Enter the payment code you received from your worker.</p>
+        <h1>Enter Clent Code</h1>
+        <p class="description">Enter the client code you received from your worker.</p>
         
         <form id="paymentCodeForm">
             <div class="input-group">
-                <label for="paymentCode">Payment Code</label>
+                <label for="paymentCode">Payment Client code</label>
                 <input type="text" id="paymentCode" placeholder="Enter your payment code" required>
+                       <label for="clientname">Client name</label>
+                <input type="text" id="clientname" placeholder="" required>
             </div>
+     
             
             <button type="submit" class="btn">
                 View Invoice
