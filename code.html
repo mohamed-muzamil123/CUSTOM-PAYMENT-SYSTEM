@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayLink - Enter Payment Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .description {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-arrow {
+            margin-left: 8px;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .success-message {
+            color: #27ae60;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Payment Code</h1>
+        <p class="description">Enter the payment code you received from your worker.</p>
+        
+        <form id="paymentCodeForm">
+            <div class="input-group">
+                <label for="paymentCode">Payment Code</label>
+                <input type="text" id="paymentCode" placeholder="Enter your payment code" required>
+            </div>
+            
+            <button type="submit" class="btn">
+                View Invoice
+                <span class="btn-arrow">→</span>
+            </button>
+            
+            <p id="errorMessage" class="error-message">Invalid payment code. Please try again.</p>
+            <p id="successMessage" class="success-message">Payment code accepted! Redirecting...</p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('paymentCodeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const enteredCode = document.getElementById('paymentCode').value.trim();
+            const errorElement = document.getElementById('errorMessage');
+            const successElement = document.getElementById('successMessage');
+            
+            // Hide messages initially
+            errorElement.style.display = 'none';
+            successElement.style.display = 'none';
+            
+            // Correct code (you can change this to whatever you want)
+            const correctCode = "00019";
+            
+            if (enteredCode.toUpperCase() === correctCode) {
+                // Code is correct
+                successElement.style.display = 'block';
+                
+                // In a real implementation, you would redirect to the invoice page
+                // For this example, we'll just show a success message
+                setTimeout(() => {
+                    alert("Redirecting to invoice page...");
+                    window.location.href = "invoice.html"; // Uncomment to actually redirect
+                }, 1000);
+            } else {
+                // Code is incorrect
+                errorElement.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
