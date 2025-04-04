@@ -154,6 +154,26 @@
             color: #6c757d;
             margin-bottom: 20px;
         }
+        .qr-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.qr-code {
+    max-width: 150px;
+    height: auto;
+    border: 1px solid #eee;
+    padding: 5px;
+    background: white;
+}
+
+/* For smaller screens */
+@media (max-width: 576px) {
+    .qr-code {
+        max-width: 120px;
+    }
+}
     </style>
 </head>
 <body>
@@ -253,10 +273,10 @@
                 </script>
             </table>
             
-            <p style="text-align: center;">Scan to pay via UPI</p>
-            <div class="qr-placeholder">
-                [QR Code]
-            </div>
+          <p style="text-align: center;">Scan to pay via UPI</p>
+<div class="qr-container">
+    <img src="qr.jpeg" alt="UPI Payment QR Code" class="img-fluid qr-code">
+</div>
         </div>
     </div>
     
